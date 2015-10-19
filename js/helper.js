@@ -35,7 +35,7 @@ var HTMLtools = '<div class="progress"><span class="meter" data-percent="%data2%
 
 
 
-var HTMLworkStart = '<h3 class="mt-40">Work Experience</h3>';
+var HTMLworkStart = '<h3>Work Experience</h3>';
 var HTMLwork = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
@@ -44,18 +44,18 @@ var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<p>%data%</p>';
 
 var HTMLprojectStart = '<h3 class="mt-40">Projects</h3>';
-var HTMLproject = '<div class="project-entry panel radius"></div>';
+var HTMLproject = '<div class="medium-6 columns project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p>%data%</p>';
 var HTMLprojectImageStart = '<div class="project-images"></div>';
 var HTMLprojectImage = '<div><img src="%data%"></div>';
 
-var HTMLschoolStart = '<h3 class="mt-40">Education</h3>';
+var HTMLschoolStart = '<h3>Education</h3>';
 var HTMLschool = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
+var HTMLschoolDates = '<div class="pull-right">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
@@ -63,10 +63,8 @@ var HTMLonlineStart = '<h3 class="mt-40">Online Classes</h3>';
 var HTMLonline = '<div class="online-entry mb-20"></div>';
 var HTMLonlineTitle = '<a href="%url%">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-// var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineDates = '<div class="pull-right">%data%</div>';
 
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 
@@ -304,4 +302,26 @@ window.addEventListener('resize', function(e) {
     if (map){
         map.fitBounds(mapBounds);
     }
+});
+
+$(window).load( function () {
+    bio.showTools();
+    bio.showSkills();
+    showMap();
+
+    $(window).scroll(function(event) {
+        bio.showTools();
+        bio.showSkills();
+        // if map already showing don't load again
+        if ($('#map').children().length === 0){
+            showMap();
+        }
+
+        // scroll to top
+        if ($(this).scrollTop() > 300) {
+            $('.scroll-top').fadeIn();
+        } else {
+            $('.scroll-top').fadeOut();
+        }
+    });
 });
