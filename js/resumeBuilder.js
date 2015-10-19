@@ -6,6 +6,8 @@ var $main = $("#main"),
     $skillsWrapper = $("#skills-wrapper"),
     $toolsWrapper = $("#tools-wrapper"),
     $contacts = $("#topContacts, #footerContacts"),
+    $workExperience = $('#workExperience'),
+    $projects = $("#projects"),
     bio = {
         name : 'Javier Salazar',
         role : 'Front-End Developer',
@@ -92,9 +94,9 @@ var $main = $("#main"),
                 // couldn not cache #myskills before since element didn't exist prior to line above
                 var $myskills = $("#myskills");
 
-                for (var index in bio.skills){
+                for (var skill in bio.skills){
                     // replacing to variable %data% and %data2%
-                    var formattedSkills = HTMLskills.replace("%data%", bio.skills[index].name).replace("%data2%", bio.skills[index].proficient);
+                    var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill].name).replace("%data2%", bio.skills[skill].proficient);
                     $myskills.append(formattedSkills);
                 }
             }
@@ -106,9 +108,9 @@ var $main = $("#main"),
                 // couldn not cache #mytools before since element didn't exist prior to line above
                 var $mytools = $("#mytools");
 
-                for (var index in bio.tools){
+                for (var tool in bio.tools){
                     // replacing to variable %data% and %data2%
-                    var formattedTools = HTMLtools.replace("%data%", bio.tools[index].name).replace("%data2%", bio.tools[index].proficient);
+                    var formattedTools = HTMLtools.replace("%data%", bio.tools[tool].name).replace("%data2%", bio.tools[tool].proficient);
                     $mytools.append(formattedTools);
                 }
             }
@@ -190,12 +192,13 @@ var $main = $("#main"),
 
             // Display Schools
             if (education.schools.length){
-                for( var index in education.schools) {
-                    var formattedName = HTMLschoolName.replace("%data%",education.schools[index].name),
-                        formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[index].degree),
-                        formattedDates = HTMLschoolDates.replace("%data%",education.schools[index].dates),
-                        formattedLocation = HTMLschoolLocation.replace("%data%",education.schools[index].location),
-                        formattedMajor = HTMLschoolMajor.replace("%data%",education.schools[index].majors);
+                for( var school in education.schools) {
+                    var currentSchool = education.schools[school],
+                        formattedName = HTMLschoolName.replace("%data%", currentSchool.name),
+                        formattedDegree = HTMLschoolDegree.replace("%data%", currentSchool.degree),
+                        formattedDates = HTMLschoolDates.replace("%data%", currentSchool.dates),
+                        formattedLocation = HTMLschoolLocation.replace("%data%", currentSchool.location),
+                        formattedMajor = HTMLschoolMajor.replace("%data%", currentSchool.majors);
 
                     $education.append(HTMLschool);
                     $(".education-entry:last").append(formattedName + formattedDegree,formattedDates,formattedLocation,formattedMajor);
@@ -205,10 +208,11 @@ var $main = $("#main"),
             // Display Online Classes
             if (education.onlineCourses.length){
                 $education.append(HTMLonlineStart);
-                for(index in education.onlineCourses){
-                    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title).replace("%url%",education.onlineCourses[index].url),
-                        formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school),
-                        formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates);
+                for( var course in education.onlineCourses){
+                    var currentCourse = education.onlineCourses[course],
+                        formattedTitle = HTMLonlineTitle.replace("%data%", currentCourse.title).replace("%url%",currentCourse.url),
+                        formattedSchool = HTMLonlineSchool.replace("%data%", currentCourse.school),
+                        formattedDates = HTMLonlineDates.replace("%data%", currentCourse.dates);
 
                     $education.append(HTMLonline);
                     $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates);
@@ -235,15 +239,16 @@ var $main = $("#main"),
         ],
         display: function () {
 
-            $('#workExperience').append(HTMLworkStart);
-            for ( var index in work.jobs){
-                var formattedWorkEmp = HTMLworkEmployer.replace("%data%", work.jobs[index].employer),
-                    formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[index].title),
-                    formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[index].dates),
-                    formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[index].location),
-                    formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[index].description);
+            $workExperience.append(HTMLworkStart);
+            for ( var job in work.jobs){
+                var currentJob = work.jobs[job],
+                formattedWorkEmp = HTMLworkEmployer.replace("%data%", currentJob.employer),
+                    formattedWorkTitle = HTMLworkTitle.replace("%data%", currentJob.title),
+                    formattedWorkDates = HTMLworkDates.replace("%data%", currentJob.dates),
+                    formattedWorkLocation = HTMLworkLocation.replace("%data%", currentJob.location),
+                    formattedWorkDescription = HTMLworkDescription.replace("%data%", currentJob.description);
 
-                $('#workExperience').append(HTMLwork);
+                $workExperience.append(HTMLwork);
                 $(".work-entry:last")
                     .append(formattedWorkEmp + formattedWorkTitle)
                     .append(formattedWorkDates)
@@ -268,19 +273,20 @@ var $main = $("#main"),
         ],
         display: function () {
 
-            $("#projects").append(HTMLprojectStart);
-            for ( var index in projects.projects){
-                var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title),
-                    formattedprojectDates = HTMLprojectDates.replace("%data%", projects.projects[index].dates),
-                    formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
+            $projects.append(HTMLprojectStart);
+            for ( var project in projects.projects){
+                var currentProject = projects.projects[project],
+                    formattedprojectTitle = HTMLprojectTitle.replace("%data%", currentProject.title),
+                    formattedprojectDates = HTMLprojectDates.replace("%data%", currentProject.dates),
+                    formattedprojectDescription = HTMLprojectDescription.replace("%data%", currentProject.description);
 
-                $("#projects").append(HTMLproject);
+                $projects.append(HTMLproject);
                 $(".project-entry:last").append(formattedprojectTitle + formattedprojectDates + formattedprojectDescription);
 
-                if (projects.projects[index].images.length) {
+                if (currentProject.images.length) {
                     $(".project-entry:last").append(HTMLprojectImageStart);
-                    for (var i in  projects.projects[index].images) {
-                        var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[i]);
+                    for (var i in  currentProject.images) {
+                        var formattedprojectImage = HTMLprojectImage.replace("%data%", currentProject.images[i]);
                         $(".project-images:last").append(formattedprojectImage);
                     }
                 }
