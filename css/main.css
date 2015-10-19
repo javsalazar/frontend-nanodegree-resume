@@ -1,0 +1,313 @@
+@font-face {
+    font-family: 'antonio-regular';
+    src: url('/fonts/antonio-regular-webfont.eot');
+    src: url('/fonts/antonio-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/antonio-regular-webfont.woff2') format('woff2'),
+         url('/fonts/antonio-regular-webfont.woff') format('woff'),
+         url('/fonts/antonio-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('/fonts/Roboto-Light-webfont.eot');
+    src: url('/fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/Roboto-Light-webfont.woff') format('woff'),
+         url('/fonts/Roboto-Light-webfont.ttf') format('truetype'),
+         url('/fonts/Roboto-Light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #ecf0f1;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'antonio-regular';
+    color: #a1181e;
+}
+
+p {
+    font-family: 'robotolight';
+}
+
+.mt-40  {
+    margin-top: 40px;
+}
+
+.main-divider {
+    margin:0 0 20px 0;
+    border-bottom: 15px solid #a1181e;
+    position: relative;
+}
+
+.main-divider:after {
+    content: "";
+    position: absolute;
+    color: #a1181e;
+    top: 15px;
+    left: calc(50% - 20px);
+    height: 0;
+    width: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #a1181e;
+}
+
+.divider {
+    margin:20px 0;
+    border-bottom: 1px solid #a1181e;
+}
+
+/*header section*/
+
+.mug {
+    margin: 0 0 20px 0;
+    border-radius: 50%;
+}
+
+.mug:hover,
+.mug:focus {
+    border-radius: 5px;
+    box-shadow: 0 0 6px 1px rgba(161, 24, 30, 0.5);
+}
+
+.subtitle {
+    margin: -10px 0 10px 0;
+}
+
+.icon-bar {
+    background-color: #a1181e;
+}
+
+.icon-bar > a {
+    -webkit-transition: all .7s ease-in-out;
+            transition: all .7s ease-in-out;
+}
+
+.icon-bar > .twitter:hover {
+    background: #0096c4;
+}
+
+.icon-bar > .envelope:hover {
+    background: #333;
+}
+
+.icon-bar > .linkedin:hover {
+    background: #1970ad;
+}
+
+.icon-bar > .google-plus:hover {
+    background: rgb(209,48,44);
+}
+
+.icon-bar > .github:hover {
+    background: #000;
+}
+
+/*tools/software section*/
+.progress {
+    margin: 0 auto 1rem auto;
+    padding: 0;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    background: #e5e5e5;
+    border-radius: 6px;
+}
+
+.meter {
+    position: relative;
+    float: left;
+    width: 0;
+    height: 100%;
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+}
+
+.percent {
+    opacity: 0;
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 1em;
+    color: white;
+    font-family: 'robotolight';
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+}
+
+.animated .percent {
+    opacity: 1;
+}
+
+/*slider*/
+.project-images div {
+    margin:0 10px;
+}
+
+/*map*/
+#map {
+    display: block;
+    height: 100%;
+    margin: 0;
+}
+
+#mapDiv {
+    height: 500px;
+    width: 100%;
+}
+
+.info-window {
+    width: 275px;
+}
+
+.info-window h2 {
+    margin:0;
+    padding: 0;
+    display:inline-block;
+    font-size: 1.5em;
+}
+
+.info-window h5 {
+    padding: 0;
+    margin: 0;
+}
+
+.info-window img {
+    float:left;
+    padding: 0;
+    margin: 0 5px 0 0;
+}
+
+
+/*svg circle*/
+.svg-container {
+    display: block;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto 20px;
+    box-shadow: 0 0 1em black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.svg-container svg {
+    width:100%;
+}
+
+.svg-container circle {
+    stroke-dashoffset: 0;
+    -webkit-transition: stroke-dashoffset 1s linear;
+            transition: stroke-dashoffset 1s linear;
+    stroke: #666;
+    stroke-width: 25px;
+}
+
+.svg-container .bar {
+    stroke: #2ecc71;
+    stroke-dashoffset: 376;
+}
+
+.svg-container:after {
+    position: absolute;
+    display: block;
+    height: 90px;
+    width: 90px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 1em black;
+    content: attr(data-percent)"%";
+    border-radius: 50%;
+    line-height: 90px;
+    font-size: 1em;
+    /*text-shadow: 0 0 0.5em black;*/
+    font-family: 'robotolight';
+}
+
+.skill-title {
+    margin:0 0 10px 0;
+    font-size: 1em;
+    opacity: 0;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+}
+
+/*from animate.css*/
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}
+
+.scroll-top {
+    background-color: rgba(161, 24, 30, 0.4);
+    color: #fff;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+    bottom: 90px;
+    right: 40px;
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+    border-radius: 50%;
+    background-clip: padding-box;
+    -webkit-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+}
+
+.scroll-top:hover, .scroll-top:focus {
+    background-color: rgba(161, 24, 30, 0.9);
+    color: #fff;
+    text-decoration: none;
+}
