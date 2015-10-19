@@ -40,7 +40,7 @@ var HTMLwork = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = ' - %data%</a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
+var HTMLworkLocation = '<div class="location-text pull-right">%data%</div>';
 var HTMLworkDescription = '<p>%data%</p>';
 
 var HTMLprojectStart = '<h3 class="mt-40">Projects</h3>';
