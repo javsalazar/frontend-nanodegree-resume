@@ -1,7 +1,6 @@
  'use strict';
     // cache jQuery objects
-var $main = $("#main"),
-    $header = $("#header"),
+var $header = $("#header"),
     $welcome = $("#welcome"),
     $skillsWrapper = $("#skills-wrapper"),
     $toolsWrapper = $("#tools-wrapper"),
@@ -256,7 +255,7 @@ var $main = $("#main"),
 
                 $workExperience.append(HTMLwork);
                 $(".work-entry:last")
-                    .append(formattedWorkEmp + formattedWorkTitle + formattedWorkDates + formattedWorkDescription);
+                    .append(formattedWorkLocation + formattedWorkEmp + formattedWorkTitle + formattedWorkDates + formattedWorkDescription);
             }
         }
     },
