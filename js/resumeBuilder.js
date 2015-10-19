@@ -250,9 +250,7 @@ var $main = $("#main"),
 
                 $workExperience.append(HTMLwork);
                 $(".work-entry:last")
-                    .append(formattedWorkEmp + formattedWorkTitle)
-                    .append(formattedWorkDates)
-                    .append(formattedWorkDescription);
+                    .append(formattedWorkEmp + formattedWorkTitle + formattedWorkDates + formattedWorkDescription);
             }
         }
     },
