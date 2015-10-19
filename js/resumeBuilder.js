@@ -1,8 +1,4 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
- 'use strict';
+'use strict';
     // cache jQuery objects
 var $main = $("#main"),
     $header = $("#header"),
@@ -100,8 +96,8 @@ var $main = $("#main"),
                     // replacing to variable %data% and %data2%
                     var formattedSkills = HTMLskills.replace("%data%", bio.skills[index].name).replace("%data2%", bio.skills[index].proficient);
                     $myskills.append(formattedSkills);
-                };
-            };
+                }
+            }
 
             // TOOLS
             if (bio.tools.length > 0) {
@@ -114,8 +110,8 @@ var $main = $("#main"),
                     // replacing to variable %data% and %data2%
                     var formattedTools = HTMLtools.replace("%data%", bio.tools[index].name).replace("%data2%", bio.tools[index].proficient);
                     $mytools.append(formattedTools);
-                };
-            };
+                }
+            }
         },
         "showTools" : function () {
             $('.meter').each(function(i, el){
@@ -138,8 +134,8 @@ var $main = $("#main"),
                         c = Math.PI*(r*2),  // calculate circumference
                         toMove = ((100-pct)/100) * c ;  //percentage of circ to move
 
-                    $circle.css({"stroke-dashoffset" : toMove })
-                    $el.siblings().addClass( "fadeInUp animated");;
+                    $circle.css({"stroke-dashoffset" : toMove });
+                    $el.siblings().addClass( "fadeInUp animated");
                 }
             });
         }
@@ -212,8 +208,7 @@ var $main = $("#main"),
                 for(index in education.onlineCourses){
                     var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title).replace("%url%",education.onlineCourses[index].url),
                         formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school),
-                        formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates)
-                        // formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[index].url);
+                        formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates);
 
                     $education.append(HTMLonline);
                     $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates);
