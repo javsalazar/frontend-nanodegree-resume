@@ -1,5 +1,4 @@
- 'use strict';
-    // cache jQuery objects
+// cache jQuery objects
 var $header = $("#header"),
     $welcome = $("#welcome"),
     $skillsWrapper = $("#skills-wrapper"),
@@ -17,7 +16,7 @@ var $header = $("#header"),
             github : 'https://github.com/javsalazar',
             linkedin : 'https://www.linkedin.com/in/xjavs',
             googleplus : 'https://plus.google.com/u/0/108384118185078160562/about/p/pub',
-            location : 'Oceanside, CA',
+            location : 'Oceanside, CA'
         },
         welcomeMessage : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, aliquam quas, eum ratione mollitia consequuntur explicabo quia maxime enim repellendus, ad itaque ab voluptatem obcaecati dolorum repudiandae similique. Eius, temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, est deserunt corporis ea assumenda obcaecati reprehenderit pariatur a quisquam repudiandae, id quod fugiat ab natus adipisci! Veritatis, neque, aperiam.',
         skills : [
@@ -66,6 +65,7 @@ var $header = $("#header"),
         ],
         biopic: 'images/me.jpg',
         display : function () {
+            'use strict';
             var formattedName = HTMLheaderName.replace("%data%", bio.name),
                 formattedRole = HTMLheaderRole.replace("%data%", bio.role),
                 formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile),
@@ -91,13 +91,15 @@ var $header = $("#header"),
                 $skillsWrapper.append(HTMLskillsStart);
 
                 // couldn not cache #myskills before since element didn't exist prior to line above
-                var $myskills = $("#myskills");
+                var $myskills = $("#myskills"),
+                    currentSkill,
+                    formattedSkills;
 
                 var len = bio.skills.length;
-                for (var i=0; i < len ; i++) {
+                for(var i=0; i < len ; i +=1) {
                     // replacing to variable %data% and %data2%
-                    var currentSkill = bio.skills[i],
-                        formattedSkills = HTMLskills.replace("%data%", currentSkill.name).replace("%data2%", currentSkill.proficient);
+                    currentSkill = bio.skills[i];
+                    formattedSkills = HTMLskills.replace("%data%", currentSkill.name).replace("%data2%", currentSkill.proficient);
                     $myskills.append(formattedSkills);
                 }
             }
@@ -109,38 +111,40 @@ var $header = $("#header"),
                 // couldn not cache #mytools before since element didn't exist prior to line above
                 var $mytools = $("#mytools");
 
-                var len = bio.tools.length;
-                for (var i=0; i < len ; i++) {
+                var lenJ = bio.tools.length;
+                for (var j=0; j < lenJ ; j++) {
                     // replacing to variable %data% and %data2%
-                    var currentTool = bio.tools[i],
+                    var currentTool = bio.tools[j],
                         formattedTools = HTMLtools.replace("%data%", currentTool.name).replace("%data2%", currentTool.proficient);
                     $mytools.append(formattedTools);
                 }
             }
         },
         showTools: function () {
+            'use strict';
             $('.meter').each(function(i, el){
                 var $el = $(el);
                 if ($el.visible(true)) {
                     var width = $el.data("percent") + "%",
-                        duration = parseInt( (i+1) * 500 );
+                        duration = parseInt( (i+1) * 500, 10 );
 
                     $el.css({"transition-duration" : duration + "ms","width" : width}).addClass('animated');
                 }
             });
         },
         showSkills: function () {
-            $('.svg-container').each(function(i, el){
-                var $el = $(el);
-                if ($el.visible(true)) {
-                    var pct = $el.data("percent"),
-                        $circle = $el.find('.bar'),
+            'use strict';
+            $('.svg-container').each(function(){
+                var $this = $(this);
+                if ($this.visible(true)) {
+                    var pct = $this.data("percent"),
+                        $circle = $this.find('.bar'),
                         r = $circle.attr('r'),  //get radius of circle
                         c = Math.PI*(r*2),  // calculate circumference
                         toMove = ((100-pct)/100) * c ;  //percentage of circ to move
 
                     $circle.css({"stroke-dashoffset" : toMove });
-                    $el.siblings().addClass( "fadeInUp animated");
+                    $this.siblings().addClass( "fadeInUp animated");
                 }
             });
         }
@@ -189,14 +193,17 @@ var $header = $("#header"),
             }
         ],
         display: function () {
+            'use strict';
             var $education = $("#education"); //has to be ouside if statements because used for both types
 
             $education.append(HTMLschoolStart);
 
             // Display Schools
             if (education.schools.length){
-                for( var school in education.schools) {
-                    var currentSchool = education.schools[school],
+                // for( var school in education.schools) {
+                var len = education.schools.length;
+                for (var i=0; i < len ; i++) {
+                    var currentSchool = education.schools[i],
                         formattedName = HTMLschoolName.replace("%data%", currentSchool.name),
                         formattedDegree = HTMLschoolDegree.replace("%data%", currentSchool.degree),
                         formattedDates = HTMLschoolDates.replace("%data%", currentSchool.dates),
@@ -211,14 +218,16 @@ var $header = $("#header"),
             // Display Online Classes
             if (education.onlineCourses.length){
                 $education.append(HTMLonlineStart);
-                for( var course in education.onlineCourses){
-                    var currentCourse = education.onlineCourses[course],
+                // for( var course in education.onlineCourses){
+                var lenJ = education.onlineCourses.length;
+                for (var j=0; j < lenJ ; j++) {
+                    var currentCourse = education.onlineCourses[j],
                         formattedTitle = HTMLonlineTitle.replace("%data%", currentCourse.title).replace("%url%",currentCourse.url),
                         formattedSchool = HTMLonlineSchool.replace("%data%", currentCourse.school),
-                        formattedDates = HTMLonlineDates.replace("%data%", currentCourse.dates);
+                        formattedDatesOnline = HTMLonlineDates.replace("%data%", currentCourse.dates);
 
                     $education.append(HTMLonline);
-                    $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates);
+                    $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDatesOnline);
                 }
             }
         }
@@ -241,7 +250,7 @@ var $header = $("#header"),
             }
         ],
         display: function () {
-
+            'use strict';
             $workExperience.append(HTMLworkStart);
 
             var len = work.jobs.length;
@@ -275,7 +284,7 @@ var $header = $("#header"),
             }
         ],
         display: function () {
-
+            'use strict';
             $projects.append(HTMLprojectStart);
 
             var len = projects.projects.length;
