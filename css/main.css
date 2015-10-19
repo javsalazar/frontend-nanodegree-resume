@@ -38,6 +38,7 @@ p {
 .mt-40  {
     margin-top: 40px;
 }
+.mb-20 {margin-bottom: 20px;}
 
 .main-divider {
     margin:0 0 20px 0;
@@ -154,6 +155,8 @@ p {
 .project-images div {
     margin:0 10px;
 }
+
+
 
 /*map*/
 #map {
