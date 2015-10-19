@@ -94,9 +94,11 @@ var $main = $("#main"),
                 // couldn not cache #myskills before since element didn't exist prior to line above
                 var $myskills = $("#myskills");
 
-                for (var skill in bio.skills){
+                var len = bio.skills.length;
+                for (var i=0; i < len ; i++) {
                     // replacing to variable %data% and %data2%
-                    var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill].name).replace("%data2%", bio.skills[skill].proficient);
+                    var currentSkill = bio.skills[i],
+                        formattedSkills = HTMLskills.replace("%data%", currentSkill.name).replace("%data2%", currentSkill.proficient);
                     $myskills.append(formattedSkills);
                 }
             }
@@ -108,9 +110,11 @@ var $main = $("#main"),
                 // couldn not cache #mytools before since element didn't exist prior to line above
                 var $mytools = $("#mytools");
 
-                for (var tool in bio.tools){
+                var len = bio.tools.length;
+                for (var i=0; i < len ; i++) {
                     // replacing to variable %data% and %data2%
-                    var formattedTools = HTMLtools.replace("%data%", bio.tools[tool].name).replace("%data2%", bio.tools[tool].proficient);
+                    var currentTool = bio.tools[i],
+                        formattedTools = HTMLtools.replace("%data%", currentTool.name).replace("%data2%", currentTool.proficient);
                     $mytools.append(formattedTools);
                 }
             }
@@ -240,8 +244,10 @@ var $main = $("#main"),
         display: function () {
 
             $workExperience.append(HTMLworkStart);
-            for ( var job in work.jobs){
-                var currentJob = work.jobs[job],
+
+            var len = work.jobs.length;
+            for (var i=0; i < len ; i++) {
+                var currentJob = work.jobs[i],
                 formattedWorkEmp = HTMLworkEmployer.replace("%data%", currentJob.employer),
                     formattedWorkTitle = HTMLworkTitle.replace("%data%", currentJob.title),
                     formattedWorkDates = HTMLworkDates.replace("%data%", currentJob.dates),
@@ -272,8 +278,10 @@ var $main = $("#main"),
         display: function () {
 
             $projects.append(HTMLprojectStart);
-            for ( var project in projects.projects){
-                var currentProject = projects.projects[project],
+
+            var len = projects.projects.length;
+            for (var i=0; i < len ; i++) {
+                var currentProject = projects.projects[i],
                     formattedprojectTitle = HTMLprojectTitle.replace("%data%", currentProject.title),
                     formattedprojectDates = HTMLprojectDates.replace("%data%", currentProject.dates),
                     formattedprojectDescription = HTMLprojectDescription.replace("%data%", currentProject.description);
@@ -283,8 +291,10 @@ var $main = $("#main"),
 
                 if (currentProject.images.length) {
                     $(".project-entry:last").append(HTMLprojectImageStart);
-                    for (var i in  currentProject.images) {
-                        var formattedprojectImage = HTMLprojectImage.replace("%data%", currentProject.images[i]);
+
+                    var lenJ = currentProject.images.length;
+                    for (var j=0; j < lenJ ; j++) {
+                        var formattedprojectImage = HTMLprojectImage.replace("%data%", currentProject.images[j]);
                         $(".project-images:last").append(formattedprojectImage);
                     }
                 }
