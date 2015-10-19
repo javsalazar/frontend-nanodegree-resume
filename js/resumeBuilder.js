@@ -86,7 +86,7 @@ var $main = $("#main"),
             $contacts.append(formattedEmail + formattedTwitter + formattedGithub + formattedLinkedin + formattedGoogleplus);
 
             // SKILLS
-            if (bio.skills.length > 0) {
+            if (bio.skills.length) {
                 $skillsWrapper.append(HTMLskillsStart);
 
                 // couldn not cache #myskills before since element didn't exist prior to line above
@@ -100,7 +100,7 @@ var $main = $("#main"),
             }
 
             // TOOLS
-            if (bio.tools.length > 0) {
+            if (bio.tools.length) {
                 $toolsWrapper.append(HTMLtoolsStart);
 
                 // couldn not cache #mytools before since element didn't exist prior to line above
@@ -189,7 +189,7 @@ var $main = $("#main"),
             $education.append(HTMLschoolStart);
 
             // Display Schools
-            if (education.schools.length > 0){
+            if (education.schools.length){
                 for( var index in education.schools) {
                     var formattedName = HTMLschoolName.replace("%data%",education.schools[index].name),
                         formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[index].degree),
@@ -203,7 +203,7 @@ var $main = $("#main"),
             }
 
             // Display Online Classes
-            if (education.onlineCourses.length > 0){
+            if (education.onlineCourses.length){
                 $education.append(HTMLonlineStart);
                 for(index in education.onlineCourses){
                     var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title).replace("%url%",education.onlineCourses[index].url),
@@ -277,7 +277,7 @@ var $main = $("#main"),
                 $("#projects").append(HTMLproject);
                 $(".project-entry:last").append(formattedprojectTitle + formattedprojectDates + formattedprojectDescription);
 
-                if (projects.projects[index].images.length > 0) {
+                if (projects.projects[index].images.length) {
                     $(".project-entry:last").append(HTMLprojectImageStart);
                     for (var i in  projects.projects[index].images) {
                         var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.projects[index].images[i]);
@@ -320,17 +320,17 @@ var $main = $("#main"),
 bio.display();
 
 // Display Work
-if (work.jobs.length > 0) {
+if (work.jobs.length) {
     work.display();
 }
 
 // Display education/online training
-if (education.schools.length > 0 || education.onlineCourses/length > 0){
+if (education.schools.length || education.onlineCourses.length){
     education.display();
 }
 
 // Display Projects
-if (projects.projects.length > 0) {
+if (projects.projects.length) {
     projects.display();
 }
 
