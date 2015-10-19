@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
     // cache jQuery objects
 var $main = $("#main"),
     $header = $("#header"),
@@ -7,64 +7,64 @@ var $main = $("#main"),
     $toolsWrapper = $("#tools-wrapper"),
     $contacts = $("#topContacts, #footerContacts"),
     bio = {
-        "name" : "Javier Salazar",
-        "role" : "Front-End Developer",
-        "contacts" : {
-            "mobile" : "760.123.0000",
-            "email" : "jav@jav.com",
-            "twitter" : "https://twitter.com/xjav",
-            "github" : "https://github.com/javsalazar",
-            "linkedin" : "https://www.linkedin.com/in/xjavs",
-            "googleplus" : "https://plus.google.com/u/0/108384118185078160562/about/p/pub",
-            "location" : "Oceanside, CA",
+        name : 'Javier Salazar',
+        role : 'Front-End Developer',
+        contacts: {
+            mobile : '760.123.0000',
+            email : 'jav@jav.com',
+            twitter : 'https://twitter.com/xjav',
+            github : 'https://github.com/javsalazar',
+            linkedin : 'https://www.linkedin.com/in/xjavs',
+            googleplus : 'https://plus.google.com/u/0/108384118185078160562/about/p/pub',
+            location : 'Oceanside, CA',
         },
-        "welcomeMessage" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, aliquam quas, eum ratione mollitia consequuntur explicabo quia maxime enim repellendus, ad itaque ab voluptatem obcaecati dolorum repudiandae similique. Eius, temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, est deserunt corporis ea assumenda obcaecati reprehenderit pariatur a quisquam repudiandae, id quod fugiat ab natus adipisci! Veritatis, neque, aperiam.",
-        "skills" : [
+        welcomeMessage : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, aliquam quas, eum ratione mollitia consequuntur explicabo quia maxime enim repellendus, ad itaque ab voluptatem obcaecati dolorum repudiandae similique. Eius, temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, est deserunt corporis ea assumenda obcaecati reprehenderit pariatur a quisquam repudiandae, id quod fugiat ab natus adipisci! Veritatis, neque, aperiam.',
+        skills : [
             {
-                "name":"Javascript",
-                "proficient" : "95"
+                name : 'Javascript',
+                proficient: '95'
             },
             {
-                "name": "HTML5",
-                "proficient" : "90"
+                name: 'HTML5',
+                proficient: '90'
             },
             {
-                "name":"CSS3",
-                "proficient" : "85"
+                name: 'CSS3',
+                proficient: '85'
             },
             {
-                "name":"Optimization",
-                "proficient" : "80"
+                name: 'Optimization',
+                proficient: '80'
             }
         ],
-        "tools" : [
+        tools: [
             {
-                "name":"GIT",
-                "proficient" : "80"
+                name: 'GIT',
+                proficient: '80'
             },
             {
-                "name": "Chrome Developer Tools",
-                "proficient" : "85"
+                name: 'Chrome Developer Tools',
+                proficient: '85'
             },
             {
-                "name":"Grunt",
-                "proficient" : "75"
+                name: 'Grunt',
+                proficient: '75'
             },
             {
-                "name":"Zurb Foundation",
-                "proficient" : "95"
+                name: 'Zurb Foundation',
+                proficient: '95'
             },
             {
-                "name":"Webmaster Tools",
-                "proficient" : "85"
+                name: 'Webmaster Tools',
+                proficient: '85'
             },
             {
-                "name":"Sublime Text",
-                "proficient" : "90"
+                name: 'Sublime Text',
+                proficient: '90'
             }
         ],
-        "biopic" : "images/me.jpg",
-        "display" : function () {
+        biopic: 'images/me.jpg',
+        display : function () {
             var formattedName = HTMLheaderName.replace("%data%", bio.name),
                 formattedRole = HTMLheaderRole.replace("%data%", bio.role),
                 formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile),
@@ -113,7 +113,7 @@ var $main = $("#main"),
                 }
             }
         },
-        "showTools" : function () {
+        showTools: function () {
             $('.meter').each(function(i, el){
                 var $el = $(el);
                 if ($el.visible(true)) {
@@ -124,7 +124,7 @@ var $main = $("#main"),
                 }
             });
         },
-        "showSkills" : function () {
+        showSkills: function () {
             $('.svg-container').each(function(i, el){
                 var $el = $(el);
                 if ($el.visible(true)) {
@@ -141,49 +141,49 @@ var $main = $("#main"),
         }
     },
     education = {
-        "schools" : [
+        schools: [
             {
-                "name" : "UCSB",
-                "location" : "Santa Barbara, CA",
-                "degree" : "Bachelors of Science",
-                "majors" : "Electrical Engineering",
-                "dates" : "1995",
-                "url" : "http://www.ucsb.edu/"
+                name: 'UCSB',
+                location: 'Santa Barbara, CA',
+                degree: 'Bachelors of Science',
+                majors: 'Electrical Engineering',
+                dates: '1995',
+                url: 'http://www.ucsb.edu/'
             }
         ],
-        "onlineCourses" : [
+        onlineCourses: [
             {
-                "title" : "Intro to HTML and CSS",
-                "school" : "Udacity",
-                "dates" : "2015",
-                "url" : "https://www.udacity.com/course/intro-to-html-and-css--ud304"
+                title: 'Intro to HTML and CSS',
+                school: 'Udacity',
+                dates: '2015',
+                url: 'https://www.udacity.com/course/intro-to-html-and-css--ud304'
             },
             {
-                "title" : "Javascript Basics",
-                "school" : "Udacity",
-                "dates" : "2015",
-                "url" : "https://www.udacity.com/course/javascript-basics--ud804"
+                title: 'Javascript Basics',
+                school: 'Udacity',
+                dates: '2015',
+                url: 'https://www.udacity.com/course/javascript-basics--ud804'
             },
             {
-                "title" : "How to Use Git and Github",
-                "school" : "Udacity",
-                "dates" : "2015",
-                "url" : "https://www.udacity.com/course/how-to-use-git-and-github--ud775"
+                title: 'How to Use Git and Github',
+                school: 'Udacity',
+                dates: '2015',
+                url: 'https://www.udacity.com/course/how-to-use-git-and-github--ud775'
             },
             {
-                "title" : "Responsive Web Design Fundamentals",
-                "school" : "Udacity",
-                "dates" : "2015",
-                "url" : "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
+                title: 'Responsive Web Design Fundamentals',
+                school: 'Udacity',
+                dates: '2015',
+                url: 'https://www.udacity.com/course/responsive-web-design-fundamentals--ud893'
             },
             {
-                "title" : "Responsive Images",
-                "school" : "Udacity",
-                "dates" : "2015",
-                "url" : "https://www.udacity.com/course/responsive-images--ud882"
+                title: 'Responsive Images',
+                school: 'Udacity',
+                dates: '2015',
+                url: 'https://www.udacity.com/course/responsive-images--ud882'
             }
         ],
-        "display" : function () {
+        display: function () {
             var $education = $("#education"); //has to be ouside if statements because used for both types
 
             $education.append(HTMLschoolStart);
@@ -217,23 +217,23 @@ var $main = $("#main"),
         }
     },
     work = {
-        "jobs" : [
+        jobs: [
             {
-                "employer" : "San Diego Union Tribune",
-                "title" : "Front-End Developer",
-                "location" : "San Diego, CA",
-                "dates" : "2012-2015",
-                "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam voluptate aliquid, illum officiis tenetur, debitis assumenda voluptatem atque amet, totam, laudantium sunt delectus natus reprehenderit dolores ratione voluptatibus nostrum inventore?"
+                employer: 'San Diego Union Tribune',
+                title: 'Front-End Developer',
+                location: 'San Diego, CA',
+                dates: '2012-2015',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam voluptate aliquid, illum officiis tenetur, debitis assumenda voluptatem atque amet, totam, laudantium sunt delectus natus reprehenderit dolores ratione voluptatibus nostrum inventore?'
             },
             {
-                "employer" : "North County Times",
-                "title" : "Lead Web Developer",
-                "location" : "Escondido, CA",
-                "dates" : "2005-2012",
-                "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quia commodi cumque accusantium, sequi sint asperiores consequuntur quam atque! Nemo sed laboriosam aliquid quod itaque omnis impedit, laudantium tempore repellat."
+                employer: 'North County Times',
+                title: 'Lead Web Developer',
+                location: 'Escondido, CA',
+                dates: '2005-2012',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quia commodi cumque accusantium, sequi sint asperiores consequuntur quam atque! Nemo sed laboriosam aliquid quod itaque omnis impedit, laudantium tempore repellat.'
             }
         ],
-        "display" : function () {
+        display: function () {
 
             $('#workExperience').append(HTMLworkStart);
             for ( var index in work.jobs){
@@ -252,21 +252,21 @@ var $main = $("#main"),
         }
     },
     projects = {
-        "projects" : [
+        projects: [
             {
-                "title" : "Project 1",
-                "dates" : "September 2014",
-                "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ex, quae temporibus unde sed tempora assumenda, ducimus deserunt harum adipisci qui, possimus animi, sunt odio excepturi incidunt! Numquam, aliquid, esse?",
-                "images": ["http://lorempixel.com/200/200/sports/","http://lorempixel.com/200/200/people/","http://lorempixel.com/200/200/business/","http://lorempixel.com/200/200/nature/","http://lorempixel.com/200/200/animals/"]
+                title: 'Project 1',
+                dates: 'September 2014',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto ex, quae temporibus unde sed tempora assumenda, ducimus deserunt harum adipisci qui, possimus animi, sunt odio excepturi incidunt! Numquam, aliquid, esse?',
+                images: ["http://lorempixel.com/200/200/sports/","http://lorempixel.com/200/200/people/","http://lorempixel.com/200/200/business/","http://lorempixel.com/200/200/nature/","http://lorempixel.com/200/200/animals/"]
             },
             {
-                "title" : "Awesome Project",
-                "dates" : "July 2015",
-                "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor velit voluptas nihil a blanditiis dolore, hic debitis fugit delectus voluptates odit, libero sit amet harum deserunt, culpa nulla? Eligendi, repellendus.",
-                "images": ["http://lorempixel.com/200/200/technics/","http://lorempixel.com/200/200/abstract/","http://lorempixel.com/200/200/cats/","http://lorempixel.com/200/200/city/"]
+                title: 'Awesome Project',
+                dates: 'July 2015',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor velit voluptas nihil a blanditiis dolore, hic debitis fugit delectus voluptates odit, libero sit amet harum deserunt, culpa nulla? Eligendi, repellendus.',
+                images: ["http://lorempixel.com/200/200/technics/","http://lorempixel.com/200/200/abstract/","http://lorempixel.com/200/200/cats/","http://lorempixel.com/200/200/city/"]
             }
         ],
-        "display" : function () {
+        display: function () {
 
             $("#projects").append(HTMLprojectStart);
             for ( var index in projects.projects){
@@ -288,30 +288,30 @@ var $main = $("#main"),
         }
     },
     mapInfo = {
-        "locations" : {
-            "ChIJBXdbYF5l3IARh5-POT_LngE" : {
-                "city" : "Oceanside",
-                "title" : "Residence",
-                "description" : "Living here, can't complain too much...",
-                "img" : "images/oceanside.jpg",
+        locations: {
+            'ChIJBXdbYF5l3IARh5-POT_LngE': {
+                city: 'Oceanside',
+                title: 'Residence',
+                description: 'Living here, can\'t complain too much...',
+                img: 'images/oceanside.jpg',
             },
-            "ChIJ1YMtb8cU6YARSHa612Q60cg" : {
-                "city" : "Santa Barbara",
-                "title" : "UCSB",
-                "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde libero.",
-                "img" : "images/ucsb.jpg"
+            'ChIJ1YMtb8cU6YARSHa612Q60cg': {
+                city: 'Santa Barbara',
+                title: 'UCSB',
+                description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde libero.',
+                img: 'images/ucsb.jpg'
             },
-            "ChIJSx6SrQ9T2YARed8V_f0hOg0" : {
-                "city" : "San Diego",
-                "title" : "SD Union Tribune",
-                "description" : "Largest newspaper in the area serving all of San Diego County.",
-                "img" : "images/utsd.jpg"
+            'ChIJSx6SrQ9T2YARed8V_f0hOg0': {
+                city: 'San Diego',
+                title: 'SD Union Tribune',
+                description: 'Largest newspaper in the area serving all of San Diego County.',
+                img: 'images/utsd.jpg'
             },
-            "ChIJe0PCgV7z24AR38WWdw_I0QE" : {
-                "city" : "Escondido",
-                "title" : "North County Times",
-                "description" : "No longer there, was swallowed by larger newspaper.",
-                "img" : "images/nct.jpg"
+            'ChIJe0PCgV7z24AR38WWdw_I0QE': {
+                city: 'Escondido',
+                title: 'North County Times',
+                description: 'No longer there, was swallowed by larger newspaper.',
+                img: 'images/nct.jpg'
             }
         }
     };
